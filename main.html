@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Divider</title>
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <h1>Array Divider</h1>
+
+  <label for="arrayInput">Enter Array (comma-separated):</label>
+  <input type="text" id="arrayInput" placeholder="1,2,3,4,1,0,2,2" required><br>
+
+  <label for="maxSum">Enter Maximum Sum:</label>
+  <input type="number" id="maxSum" placeholder="5" required><br>
+
+  <button onclick="divideArray()">Divide Array</button>
+
+  <div id="result"></div>
 
 </body>
-
 </html>
+

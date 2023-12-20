@@ -1,8 +1,34 @@
-const arr = [1, 2, 3, 4, 1, 0, 2, 2];
+function divide(arr, n) {
+  const result = [];
+  let currentSubarray = [];
+  let currentSum = 0;
 
-const divide = (arr, n) => {
-  // Write your code here
-};
+  for (const num of arr) {
+    if (currentSum + num <= n) {
+      currentSubarray.push(num);
+      currentSum += num;
+    } else {
+      result.push(currentSubarray);
+      currentSubarray = [num];
+      currentSum = num;
+    }
+  }
 
-const n = prompt("Enter n: ");
-alert(JSON.stringify(divide(arr, n)));
+  // Add the last subarray
+  if (currentSubarray.length > 0) {
+    result.push(currentSubarray);
+  }
+
+  return result;
+}
+
+function divideArray() {
+  const arrayInput = document.getElementById('arrayInput').value;
+  const maxSum = parseInt(document.getElementById('maxSum').value);
+
+  const array = arrayInput.split(',').map(Number);
+  const result = divide(array, maxSum);
+
+  document.getElementById('result').innerText = `Result: ${JSON.stringify(result)}`;
+}
+
